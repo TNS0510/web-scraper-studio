@@ -9,52 +9,32 @@
 <body>
     <div class="container">
         <header>
-            <h1>🔍 Web Scraper Studio</h1>
-            <p>Extract structured headings and content from any website in seconds.</p>
+            <h1>Web Scraper Studio</h1>
+            <p>Extract headings and links from any public website URL in seconds.</p>
         </header>
 
         <main>
-            <!-- Input Section -->
-            <section class="card input-section">
-                <label for="urlInput">Target Web Address (URL):</label>
+            <form id="scraper-form">
                 <div class="input-group">
                     <input 
                         type="url" 
-                        id="urlInput" 
+                        id="url-input" 
                         placeholder="https://example.com" 
                         required
                     />
-                    <button id="scrapeBtn">Scrape Website</button>
+                    <button type="submit" id="submit-btn">Scrape Website</button>
                 </div>
-            </section>
+            </form>
 
-            <!-- Status Message Display -->
-            <div id="statusMessage" class="status-message hidden"></div>
+            <div id="status-message" class="status"></div>
 
-            <!-- Results Display Section -->
-            <section id="resultsSection" class="card results-section hidden">
-                <div class="results-header">
-                    <h2>Extracted Data</h2>
-                    <span id="itemCount" class="badge">0 items found</span>
-                </div>
-
-                <table id="resultsTable">
-                    <thead>
-                        <tr>
-                            <th>Type</th>
-                            <th>HTML Tag</th>
-                            <th>Extracted Content</th>
-                        </tr>
-                    </thead>
-                    <tbody id="resultsBody">
-                        <!-- Data rows will be injected dynamically by app.js -->
-                    </tbody>
-                </table>
+            <section id="results-section" class="hidden">
+                <h2>Extracted Data (<span id="results-count">0</span>)</h2>
+                <div id="results-container" class="results-grid"></div>
             </section>
         </main>
     </div>
 
-    <!-- Connect JavaScript interactive logic -->
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
