@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Web Scraper Studio</h1>
+            <p>Extract structured headings and content from any website in seconds.</p>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <section class="card input-section">
+                <label for="urlInput">Target Web Address (URL):</label>
+                <div class="input-group">
+                    <input 
+                        type="url" 
+                        id="urlInput" 
+                        placeholder="https://example.com" 
+                        required
+                    />
+                    <button id="scrapeBtn">Scrape Website</button>
+                </div>
+            </section>
+
+            <!-- Status Message Display -->
+            <div id="statusMessage" class="status-message hidden"></div>
+
+            <!-- Results Display Section -->
+            <section id="resultsSection" class="card results-section hidden">
+                <div class="results-header">
+                    <h2>Extracted Data</h2>
+                    <span id="itemCount" class="badge">0 items found</span>
+                </div>
+
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>HTML Tag</th>
+                            <th>Extracted Content</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Data rows will be injected dynamically by app.js -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Connect JavaScript interactive logic -->
+    <script src="app.js"></script>
+</body>
+</html>
